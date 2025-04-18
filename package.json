@@ -1,6 +1,6 @@
 {
 	"name": "jsoninator",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Derive typescript interfaces from json.",
 	"type": "module",
 	"keywords": [
