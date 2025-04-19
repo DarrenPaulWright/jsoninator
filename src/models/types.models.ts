@@ -7,12 +7,14 @@ export type PrimitiveTypes = 'number' | 'string' | 'boolean' | 'null';
 export interface IStringType {
 	type: 'string';
 	values: Array<string>;
+	valuesMap: { [value: string]: true };
 	index?: number;
 }
 
 export interface INumberType {
 	type: 'number';
 	values: Array<number>;
+	valuesMap: { [value: number]: true };
 	index?: number;
 }
 

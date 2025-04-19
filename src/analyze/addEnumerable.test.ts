@@ -29,6 +29,7 @@ describe('strings', () => {
 				type: {
 					type: 'string',
 					values: ['apples', 'bananas', 'kiwi'],
+					valuesMap: { apples: true, bananas: true, kiwi: true },
 					index: 0
 				},
 				count: 10,
@@ -42,6 +43,7 @@ describe('strings', () => {
 		assert.equal(value, {
 			type: 'string',
 			values: ['apples', 'bananas', 'kiwi'],
+			valuesMap: { apples: true, bananas: true, kiwi: true },
 			index: 0
 		});
 	});
@@ -88,7 +90,8 @@ describe('strings', () => {
 				path: ['fruit'],
 				type: {
 					type: 'string',
-					values: ['apples', 'bananas', 'kiwi']
+					values: ['apples', 'bananas', 'kiwi'],
+					valuesMap: { apples: true, bananas: true, kiwi: true }
 				},
 				count: 12,
 				refs: 8,
@@ -101,6 +104,7 @@ describe('strings', () => {
 		assert.equal(value, {
 			type: 'string',
 			values: ['apples', 'bananas', 'kiwi'],
+			valuesMap: { apples: true, bananas: true, kiwi: true },
 			index: 1
 		});
 	});
@@ -147,7 +151,8 @@ describe('strings', () => {
 				path: ['fruit'],
 				type: {
 					type: 'string',
-					values: ['apples', 'bananas', 'kiwi']
+					values: ['apples', 'bananas', 'kiwi'],
+					valuesMap: { apples: true, bananas: true, kiwi: true }
 				},
 				count: 5,
 				refs: 7,
@@ -157,6 +162,7 @@ describe('strings', () => {
 				type: {
 					type: 'string',
 					values: ['apples', 'oranges', 'pineapples'],
+					valuesMap: { apples: true, oranges: true, pineapples: true },
 					index: 2
 				},
 				count: 7,
@@ -170,6 +176,7 @@ describe('strings', () => {
 		assert.equal(value, {
 			type: 'string',
 			values: ['apples', 'oranges', 'pineapples'],
+			valuesMap: { apples: true, oranges: true, pineapples: true },
 			index: 2
 		});
 	});
@@ -201,6 +208,7 @@ describe('numbers', () => {
 				type: {
 					type: 'number',
 					values: [1, 2, 3],
+					valuesMap: { 1: true, 2: true, 3: true },
 					index: 0
 				},
 				count: 10,
@@ -214,6 +222,7 @@ describe('numbers', () => {
 		assert.equal(value, {
 			type: 'number',
 			values: [1, 2, 3],
+			valuesMap: { 1: true, 2: true, 3: true },
 			index: 0
 		});
 	});
@@ -260,7 +269,8 @@ describe('numbers', () => {
 				path: ['fruit'],
 				type: {
 					type: 'number',
-					values: [1, 4, 8]
+					values: [1, 4, 8],
+					valuesMap: { 1: true, 4: true, 8: true }
 				},
 				count: 12,
 				refs: 8,
@@ -273,6 +283,7 @@ describe('numbers', () => {
 		assert.equal(value, {
 			type: 'number',
 			values: [1, 4, 8],
+			valuesMap: { 1: true, 4: true, 8: true },
 			index: 1
 		});
 	});
@@ -319,7 +330,8 @@ describe('numbers', () => {
 				path: ['fruit'],
 				type: {
 					type: 'number',
-					values: [1, 4, 8]
+					values: [1, 4, 8],
+					valuesMap: { 1: true, 4: true, 8: true }
 				},
 				count: 5,
 				refs: 7,
@@ -329,6 +341,7 @@ describe('numbers', () => {
 				type: {
 					type: 'number',
 					values: [2, 7, 199],
+					valuesMap: { 2: true, 7: true, 199: true },
 					index: 2
 				},
 				count: 7,
@@ -342,6 +355,7 @@ describe('numbers', () => {
 		assert.equal(value, {
 			type: 'number',
 			values: [2, 7, 199],
+			valuesMap: { 2: true, 7: true, 199: true },
 			index: 2
 		});
 	});

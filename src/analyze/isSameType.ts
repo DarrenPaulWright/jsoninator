@@ -50,11 +50,11 @@ const isSameType = (
 
 	if (isStrict) {
 		if (a.type === 'number' && b.type === 'number') {
-			return isAllValuesSame(a.values, b.values);
+			return isAllValuesSame(a, b);
 		}
 
 		if (a.type === 'string' && b.type === 'string') {
-			return isAllValuesSame(a.values, b.values);
+			return isAllValuesSame(a, b);
 		}
 	}
 

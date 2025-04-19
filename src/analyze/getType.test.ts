@@ -217,7 +217,8 @@ it('should handle an array of strings', async () => {
 		count: 1,
 		types: [{
 			type: 'string',
-			values: ['apple', 'banana', 'kiwi']
+			values: ['apple', 'banana', 'kiwi'],
+			valuesMap: { apple: true, banana: true, kiwi: true }
 		}]
 	});
 	assert.equal(analysisResult.enums, []);

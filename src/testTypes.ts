@@ -11,25 +11,37 @@ import type {
 
 export const stringType: IType = {
 	type: 'string',
-	values: []
+	values: [],
+	valuesMap: {}
 };
 
 export const stringTypeWith = (values: Array<string>): IStringType => {
 	return {
 		type: 'string',
-		values: [...values]
+		values: [...values],
+		valuesMap: values.reduce<IStringType['valuesMap']>((result, value) => {
+			result[value] = true;
+
+			return result;
+		}, {})
 	};
 };
 
 export const numberType: IType = {
 	type: 'number',
-	values: []
+	values: [],
+	valuesMap: {}
 };
 
 export const numberTypeWith = (values: Array<number>): INumberType => {
 	return {
 		type: 'number',
-		values: [...values]
+		values: [...values],
+		valuesMap: values.reduce<INumberType['valuesMap']>((result, value) => {
+			result[value] = true;
+
+			return result;
+		}, {})
 	};
 };
 

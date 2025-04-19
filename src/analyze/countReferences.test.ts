@@ -105,6 +105,7 @@ it('should handle an array', () => {
 		type: {
 			type: 'string',
 			values: ['apples', 'bananas', 'kiwis'],
+			valuesMap: { apples: true, bananas: true, kiwis: true },
 			index: 0
 		},
 		count: 10,
@@ -115,6 +116,7 @@ it('should handle an array', () => {
 		type: {
 			type: 'number',
 			values: [1, 3, 8],
+			valuesMap: { 1: true, 3: true, 8: true },
 			index: 1
 		},
 		count: 10,
@@ -163,6 +165,7 @@ it('should handle tuples', () => {
 		type: {
 			type: 'string',
 			values: ['apples', 'bananas', 'kiwis'],
+			valuesMap: { apples: true, bananas: true, kiwis: true },
 			index: 0
 		},
 		count: 10,
@@ -173,6 +176,7 @@ it('should handle tuples', () => {
 		type: {
 			type: 'number',
 			values: [1, 3, 8],
+			valuesMap: { 1: true, 3: true, 8: true },
 			index: 1
 		},
 		count: 10,
@@ -231,6 +235,7 @@ it('should handle strings', () => {
 		type: {
 			type: 'string',
 			values: ['apples', 'bananas', 'kiwi'],
+			valuesMap: { apples: true, bananas: true, kiwi: true },
 			index: 0
 		},
 		count: 10,
@@ -243,6 +248,7 @@ it('should handle strings', () => {
 	assert.equal(value, {
 		type: 'string',
 		values: ['apples', 'bananas', 'kiwi'],
+		valuesMap: { apples: true, bananas: true, kiwi: true },
 		index: 0
 	});
 });
@@ -265,6 +271,7 @@ it('should handle numbers', () => {
 		type: {
 			type: 'number',
 			values: [1, 3, 5, 7, 9],
+			valuesMap: { 1: true, 3: true, 5: true, 7: true, 9: true },
 			index: 0
 		},
 		count: 11,
@@ -277,6 +284,7 @@ it('should handle numbers', () => {
 	assert.equal(value, {
 		type: 'number',
 		values: [1, 3, 5, 7, 9],
+		valuesMap: { 1: true, 3: true, 5: true, 7: true, 9: true },
 		index: 0
 	});
 });

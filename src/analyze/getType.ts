@@ -109,13 +109,15 @@ const getType = async (
 		if (shallowType === 'string') {
 			returnValue = {
 				type: shallowType,
-				values: [data as string]
+				values: [data as string],
+				valuesMap: { [data as string]: true }
 			};
 		}
 		else if (shallowType === 'number') {
 			returnValue = {
 				type: shallowType,
-				values: [data as number]
+				values: [data as number],
+				valuesMap: { [data as number]: true }
 			};
 		}
 		else {

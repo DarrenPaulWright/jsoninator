@@ -26,7 +26,7 @@ const addEnumerable = (
 				let score = item.path[item.path.length - 1] === name ? 0.3 : 0;
 				const overlap = (item.type as IStringType).values
 					.filter((subValue: string) => {
-						return (value as IStringType).values.includes(subValue);
+						return (value as IStringType).valuesMap[subValue];
 					}).length;
 
 				score += (overlap / item.type.values.length) * 0.35;

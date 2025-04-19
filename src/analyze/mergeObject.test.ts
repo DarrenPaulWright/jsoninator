@@ -30,7 +30,8 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'number',
-				values: [1, 2, 3]
+				values: [1, 2, 3],
+				valuesMap: { 1: true, 2: true, 3: true }
 			}],
 			optional: false
 		},
@@ -38,7 +39,8 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'string',
-				values: ['red', 'purple']
+				values: ['red', 'purple'],
+				valuesMap: { red: true, purple: true }
 			}],
 			optional: false
 		},
@@ -74,7 +76,8 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'number',
-				values: [4]
+				values: [4],
+				valuesMap: { 4: true }
 			}],
 			optional: false
 		},
@@ -82,7 +85,8 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'string',
-				values: ['green', 'purple']
+				values: ['green', 'purple'],
+				valuesMap: { green: true, purple: true }
 			}],
 			optional: false
 		},
@@ -120,7 +124,8 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'number',
-				values: [1, 2, 3, 4]
+				values: [1, 2, 3, 4],
+				valuesMap: { 1: true, 2: true, 3: true, 4: true }
 			}],
 			optional: false
 		},
@@ -128,7 +133,8 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'string',
-				values: ['red', 'purple', 'green']
+				values: ['red', 'purple', 'green'],
+				valuesMap: { red: true, purple: true, green: true }
 			}],
 			optional: false
 		},
