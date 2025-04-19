@@ -1,5 +1,4 @@
 import { assert, it } from 'hippogriff';
-import { List } from 'hord';
 import type { IInterfaceObject } from '../models/types.models.js';
 import {
 	booleanType,
@@ -31,7 +30,7 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'number',
-				values: new List(1, 2, 3)
+				values: [1, 2, 3]
 			}],
 			optional: false
 		},
@@ -39,7 +38,7 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'string',
-				values: new List('red', 'purple')
+				values: ['red', 'purple']
 			}],
 			optional: false
 		},
@@ -75,7 +74,7 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'number',
-				values: new List(4)
+				values: [4]
 			}],
 			optional: false
 		},
@@ -83,7 +82,7 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'string',
-				values: new List('green', 'purple')
+				values: ['green', 'purple']
 			}],
 			optional: false
 		},
@@ -121,7 +120,7 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'number',
-				values: new List(1, 2, 3, 4)
+				values: [1, 2, 3, 4]
 			}],
 			optional: false
 		},
@@ -129,7 +128,7 @@ it('should merge two objects', () => {
 			type: 'union',
 			types: [{
 				type: 'string',
-				values: new List('red', 'purple', 'green')
+				values: ['red', 'purple', 'green']
 			}],
 			optional: false
 		},

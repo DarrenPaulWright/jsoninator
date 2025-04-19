@@ -1,5 +1,4 @@
 import { assert, it } from 'hippogriff';
-import { List } from 'hord';
 import type {
 	IArrayType,
 	IInterfaceStructure,
@@ -105,7 +104,7 @@ it('should handle an array', () => {
 		path: ['fruit'],
 		type: {
 			type: 'string',
-			values: new List('apples', 'bananas', 'kiwis'),
+			values: ['apples', 'bananas', 'kiwis'],
 			index: 0
 		},
 		count: 10,
@@ -115,7 +114,7 @@ it('should handle an array', () => {
 		path: ['fruit'],
 		type: {
 			type: 'number',
-			values: new List(1, 3, 8),
+			values: [1, 3, 8],
 			index: 1
 		},
 		count: 10,
@@ -163,7 +162,7 @@ it('should handle tuples', () => {
 		path: ['fruit'],
 		type: {
 			type: 'string',
-			values: new List('apples', 'bananas', 'kiwis'),
+			values: ['apples', 'bananas', 'kiwis'],
 			index: 0
 		},
 		count: 10,
@@ -173,7 +172,7 @@ it('should handle tuples', () => {
 		path: ['fruit'],
 		type: {
 			type: 'number',
-			values: new List(1, 3, 8),
+			values: [1, 3, 8],
 			index: 1
 		},
 		count: 10,
@@ -231,7 +230,7 @@ it('should handle strings', () => {
 		path: ['fruit'],
 		type: {
 			type: 'string',
-			values: new List('apples', 'bananas', 'kiwi'),
+			values: ['apples', 'bananas', 'kiwi'],
 			index: 0
 		},
 		count: 10,
@@ -243,7 +242,7 @@ it('should handle strings', () => {
 	assert.moreThan(analysisResult.analysisDuration, -1);
 	assert.equal(value, {
 		type: 'string',
-		values: new List('apples', 'bananas', 'kiwi'),
+		values: ['apples', 'bananas', 'kiwi'],
 		index: 0
 	});
 });
@@ -265,7 +264,7 @@ it('should handle numbers', () => {
 		path: ['fruit'],
 		type: {
 			type: 'number',
-			values: new List(1, 3, 5, 7, 9),
+			values: [1, 3, 5, 7, 9],
 			index: 0
 		},
 		count: 11,
@@ -277,7 +276,7 @@ it('should handle numbers', () => {
 	assert.moreThan(analysisResult.analysisDuration, -1);
 	assert.equal(value, {
 		type: 'number',
-		values: new List(1, 3, 5, 7, 9),
+		values: [1, 3, 5, 7, 9],
 		index: 0
 	});
 });

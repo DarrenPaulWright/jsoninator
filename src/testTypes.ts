@@ -1,4 +1,3 @@
-import { List } from 'hord';
 import type { IRenderer } from './models/render.models.js';
 import type {
 	IAnalysisResult,
@@ -12,25 +11,25 @@ import type {
 
 export const stringType: IType = {
 	type: 'string',
-	values: new List()
+	values: []
 };
 
 export const stringTypeWith = (values: Array<string>): IStringType => {
 	return {
 		type: 'string',
-		values: new List(...values)
+		values: [...values]
 	};
 };
 
 export const numberType: IType = {
 	type: 'number',
-	values: new List()
+	values: []
 };
 
 export const numberTypeWith = (values: Array<number>): INumberType => {
 	return {
 		type: 'number',
-		values: new List(...values)
+		values: [...values]
 	};
 };
 

@@ -1,5 +1,3 @@
-import type { List } from 'hord';
-
 export interface IInputObject {
 	[key: string]: unknown;
 }
@@ -8,13 +6,13 @@ export type PrimitiveTypes = 'number' | 'string' | 'boolean' | 'null';
 
 export interface IStringType {
 	type: 'string';
-	values: List;
+	values: Array<string>;
 	index?: number;
 }
 
 export interface INumberType {
 	type: 'number';
-	values: List;
+	values: Array<number>;
 	index?: number;
 }
 

@@ -55,7 +55,7 @@ const renderTypeValue = (
 				return data.enums[value.index].renderRoot ?
 					data.enums[value.index].name :
 					data.renderer.unionStrings(
-						data.enums[value.index].type.values.values() as Array<string>
+						data.enums[value.index].type.values as Array<string>
 					);
 			}
 
@@ -67,7 +67,7 @@ const renderTypeValue = (
 				return data.enums[value.index].renderRoot ?
 					data.enums[value.index].name :
 					data.renderer.unionNumbers(
-						data.enums[value.index].type.values.values() as Array<number>
+						data.enums[value.index].type.values as Array<number>
 					);
 			}
 
@@ -157,14 +157,14 @@ const render = (analysisResult: IAnalysisResult, options: IAllOptions): string =
 					output += getStatsComment(item, data);
 
 					output += options.preferEnumsOverUnions && item.type.type === 'string' ?
-						data.renderer.enum(item.name, item.type.values.values() as Array<string>) :
+						data.renderer.enum(item.name, item.type.values) :
 						`type ${ item.name } = ${
 							item.type.type === 'string' ?
 								data.renderer.unionStrings(
-									item.type.values.values() as Array<string>
+									item.type.values
 								) :
 								data.renderer.unionNumbers(
-									item.type.values.values() as Array<number>
+									item.type.values
 								)
 						};`;
 

@@ -1,5 +1,4 @@
 import { assert, it } from 'hippogriff';
-import { List } from 'hord';
 import {
 	booleanType,
 	emptyAnalysisResult,
@@ -218,7 +217,7 @@ it('should handle an array of strings', async () => {
 		count: 1,
 		types: [{
 			type: 'string',
-			values: new List('apple', 'banana', 'kiwi')
+			values: ['apple', 'banana', 'kiwi']
 		}]
 	});
 	assert.equal(analysisResult.enums, []);

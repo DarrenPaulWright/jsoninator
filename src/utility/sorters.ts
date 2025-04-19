@@ -10,7 +10,15 @@ const TYPE_SORT_ORDER: { [types: string]: number } = {
 	tuple: 7
 };
 
-const sortStrings = (a: string, b: string): number => {
+export const sortNumbers = (a: number, b: number): number => {
+	if (a < b) {
+		return -1;
+	}
+
+	return a > b ? 1 : 0;
+};
+
+export const sortStrings = (a: string, b: string): number => {
 	return a.localeCompare(b, 'default', {
 		sensitivity: 'base',
 		numeric: true

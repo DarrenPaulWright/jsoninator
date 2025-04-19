@@ -17,8 +17,10 @@ const reduceTuplesToArray = (
 const mergeTypes = <T extends IType>(parent: T, child: T): void => {
 	if (parent.type === child.type) {
 		if (parent.type === 'string' || parent.type === 'number') {
-			(child as INumberType).values.forEach((item: string) => {
-				parent.values.addUnique(item);
+			(child as INumberType).values.forEach((item: number) => {
+				if (!(parent as INumberType).values.includes(item)) {
+					(parent as INumberType).values.push(item);
+				}
 			});
 		}
 

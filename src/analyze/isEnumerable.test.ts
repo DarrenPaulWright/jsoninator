@@ -1,5 +1,4 @@
 import { assert, describe, it } from 'hippogriff';
-import { List } from 'hord';
 import isEnumerable from './isEnumerable.js';
 
 const badNames: Array<string> = [
@@ -24,7 +23,7 @@ describe('strings', () => {
 	it('should return true', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List('apples', 'bananas', '1234')
+			values: ['apples', 'bananas', '1234']
 		}, 'fruit', 20);
 
 		assert.is(result, true);
@@ -34,7 +33,7 @@ describe('strings', () => {
 		it(`should return false if name is ${ name }`, () => {
 			const result = isEnumerable.strings({
 				type: 'string',
-				values: new List('apples', 'bananas')
+				values: ['apples', 'bananas']
 			}, name, 20);
 
 			assert.is(result, false);
@@ -43,7 +42,7 @@ describe('strings', () => {
 		it(`should return false if name is ${ name }Something`, () => {
 			const result = isEnumerable.strings({
 				type: 'string',
-				values: new List('apples', 'bananas')
+				values: ['apples', 'bananas']
 			}, `${ name }Something`, 20);
 
 			assert.is(result, false);
@@ -53,7 +52,7 @@ describe('strings', () => {
 	it('should return false length of values is 1', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List('apples')
+			values: ['apples']
 		}, 'fruit', 3);
 
 		assert.is(result, false);
@@ -62,9 +61,9 @@ describe('strings', () => {
 	it('should return false length of values is more than max', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List(...new Array(31)
+			values: new Array(31)
 				.fill(1)
-				.map((_x, index) => `apples${ index }`))
+				.map((_x, index) => `apples${ index }`)
 		}, 'fruit', 3);
 
 		assert.is(result, false);
@@ -73,7 +72,7 @@ describe('strings', () => {
 	it('should return false if count is less than twice the length of values', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List('apples', 'bananas')
+			values: ['apples', 'bananas']
 		}, 'fruit', 3);
 
 		assert.is(result, false);
@@ -82,7 +81,7 @@ describe('strings', () => {
 	it('should return false if a value has length greater than 20', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List('apples', 'bananasIsVeryVeryLong')
+			values: ['apples', 'bananasIsVeryVeryLong']
 		}, 'fruit', 30);
 
 		assert.is(result, false);
@@ -91,7 +90,7 @@ describe('strings', () => {
 	it('should return false if a value is not alphaNumeric', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List('apples', 'bananas!')
+			values: ['apples', 'bananas!']
 		}, 'fruit', 30);
 
 		assert.is(result, false);
@@ -100,7 +99,7 @@ describe('strings', () => {
 	it('should return false if values are all year like', () => {
 		const result = isEnumerable.strings({
 			type: 'string',
-			values: new List('1234', '5678!')
+			values: ['1234', '5678!']
 		}, 'fruit', 30);
 
 		assert.is(result, false);
@@ -111,7 +110,7 @@ describe('numbers', () => {
 	it('should return true', () => {
 		const result = isEnumerable.numbers({
 			type: 'number',
-			values: new List(1, 2, 3)
+			values: [1, 2, 3]
 		}, 'fruit', 20);
 
 		assert.is(result, true);
@@ -121,7 +120,7 @@ describe('numbers', () => {
 		it(`should return false if name is ${ name }`, () => {
 			const result = isEnumerable.numbers({
 				type: 'number',
-				values: new List(1, 2, 3)
+				values: [1, 2, 3]
 			}, name, 20);
 
 			assert.is(result, false);
@@ -130,7 +129,7 @@ describe('numbers', () => {
 		it(`should return false if name is ${ name }Something`, () => {
 			const result = isEnumerable.numbers({
 				type: 'number',
-				values: new List(1, 2, 3)
+				values: [1, 2, 3]
 			}, `${ name }Something`, 20);
 
 			assert.is(result, false);
@@ -140,7 +139,7 @@ describe('numbers', () => {
 	it('should return false length of values is 1', () => {
 		const result = isEnumerable.numbers({
 			type: 'number',
-			values: new List(1)
+			values: [1]
 		}, 'fruit', 3);
 
 		assert.is(result, false);
@@ -149,9 +148,9 @@ describe('numbers', () => {
 	it('should return false length of values is more than max', () => {
 		const result = isEnumerable.numbers({
 			type: 'number',
-			values: new List(...new Array(31)
+			values: new Array(31)
 				.fill(1)
-				.map((_x, index) => index))
+				.map((_x, index) => index)
 		}, 'fruit', 3);
 
 		assert.is(result, false);
@@ -160,7 +159,7 @@ describe('numbers', () => {
 	it('should return false if count is less than twice the length of values', () => {
 		const result = isEnumerable.numbers({
 			type: 'number',
-			values: new List(1, 2)
+			values: [1, 2]
 		}, 'fruit', 3);
 
 		assert.is(result, false);
@@ -169,7 +168,7 @@ describe('numbers', () => {
 	it('should return false if property ends in "s"', () => {
 		const result = isEnumerable.numbers({
 			type: 'number',
-			values: new List(1, 2)
+			values: [1, 2]
 		}, 'fruits', 30);
 
 		assert.is(result, false);
@@ -178,7 +177,7 @@ describe('numbers', () => {
 	it('should return false if a value is not an integer', () => {
 		const result = isEnumerable.numbers({
 			type: 'number',
-			values: new List(1, 2.1)
+			values: [1, 2.1]
 		}, 'fruit', 30);
 
 		assert.is(result, false);

@@ -1,4 +1,3 @@
-import { List } from 'hord';
 import type {
 	IAnalysisResult,
 	IInputObject,
@@ -110,13 +109,13 @@ const getType = async (
 		if (shallowType === 'string') {
 			returnValue = {
 				type: shallowType,
-				values: new List(data)
+				values: [data as string]
 			};
 		}
 		else if (shallowType === 'number') {
 			returnValue = {
 				type: shallowType,
-				values: new List(data)
+				values: [data as number]
 			};
 		}
 		else {

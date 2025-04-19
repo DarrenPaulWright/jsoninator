@@ -1,5 +1,4 @@
 import { assert, describe, it } from 'hippogriff';
-import { List } from 'hord';
 import type { IAnalysisResult, IInterfaceStructure } from '../models/types.models.js';
 import { numberTypeWith, stringTypeWith } from '../testTypes.js';
 import addEnumerable from './addEnumerable.js';
@@ -29,7 +28,7 @@ describe('strings', () => {
 				path: ['fruit'],
 				type: {
 					type: 'string',
-					values: new List('apples', 'bananas', 'kiwi'),
+					values: ['apples', 'bananas', 'kiwi'],
 					index: 0
 				},
 				count: 10,
@@ -42,7 +41,7 @@ describe('strings', () => {
 		});
 		assert.equal(value, {
 			type: 'string',
-			values: new List('apples', 'bananas', 'kiwi'),
+			values: ['apples', 'bananas', 'kiwi'],
 			index: 0
 		});
 	});
@@ -89,7 +88,7 @@ describe('strings', () => {
 				path: ['fruit'],
 				type: {
 					type: 'string',
-					values: new List('apples', 'bananas', 'kiwi')
+					values: ['apples', 'bananas', 'kiwi']
 				},
 				count: 12,
 				refs: 8,
@@ -101,7 +100,7 @@ describe('strings', () => {
 		});
 		assert.equal(value, {
 			type: 'string',
-			values: new List('apples', 'bananas', 'kiwi'),
+			values: ['apples', 'bananas', 'kiwi'],
 			index: 1
 		});
 	});
@@ -148,7 +147,7 @@ describe('strings', () => {
 				path: ['fruit'],
 				type: {
 					type: 'string',
-					values: new List('apples', 'bananas', 'kiwi')
+					values: ['apples', 'bananas', 'kiwi']
 				},
 				count: 5,
 				refs: 7,
@@ -157,7 +156,7 @@ describe('strings', () => {
 				path: ['fruit'],
 				type: {
 					type: 'string',
-					values: new List('apples', 'oranges', 'pineapples'),
+					values: ['apples', 'oranges', 'pineapples'],
 					index: 2
 				},
 				count: 7,
@@ -170,7 +169,7 @@ describe('strings', () => {
 		});
 		assert.equal(value, {
 			type: 'string',
-			values: new List('apples', 'oranges', 'pineapples'),
+			values: ['apples', 'oranges', 'pineapples'],
 			index: 2
 		});
 	});
@@ -201,7 +200,7 @@ describe('numbers', () => {
 				path: ['fruit'],
 				type: {
 					type: 'number',
-					values: new List(1, 2, 3),
+					values: [1, 2, 3],
 					index: 0
 				},
 				count: 10,
@@ -214,7 +213,7 @@ describe('numbers', () => {
 		});
 		assert.equal(value, {
 			type: 'number',
-			values: new List(1, 2, 3),
+			values: [1, 2, 3],
 			index: 0
 		});
 	});
@@ -261,7 +260,7 @@ describe('numbers', () => {
 				path: ['fruit'],
 				type: {
 					type: 'number',
-					values: new List(1, 4, 8)
+					values: [1, 4, 8]
 				},
 				count: 12,
 				refs: 8,
@@ -273,7 +272,7 @@ describe('numbers', () => {
 		});
 		assert.equal(value, {
 			type: 'number',
-			values: new List(1, 4, 8),
+			values: [1, 4, 8],
 			index: 1
 		});
 	});
@@ -320,7 +319,7 @@ describe('numbers', () => {
 				path: ['fruit'],
 				type: {
 					type: 'number',
-					values: new List(1, 4, 8)
+					values: [1, 4, 8]
 				},
 				count: 5,
 				refs: 7,
@@ -329,7 +328,7 @@ describe('numbers', () => {
 				path: ['fruit'],
 				type: {
 					type: 'number',
-					values: new List(2, 7, 199),
+					values: [2, 7, 199],
 					index: 2
 				},
 				count: 7,
@@ -342,7 +341,7 @@ describe('numbers', () => {
 		});
 		assert.equal(value, {
 			type: 'number',
-			values: new List(2, 7, 199),
+			values: [2, 7, 199],
 			index: 2
 		});
 	});

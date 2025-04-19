@@ -95,7 +95,6 @@
 	},
 	"dependencies": {
 		"change-case": "^5.4.4",
-		"hord": "^0.7.10",
 		"object-agent": "^1.6.1"
 	},
 	"devDependencies": {

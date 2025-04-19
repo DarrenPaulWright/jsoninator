@@ -5,6 +5,7 @@ import type {
 	IStringType
 } from '../models/types.models.js';
 import getMaxScore from '../utility/getMaxScore.js';
+import { sortNumbers, sortStrings } from '../utility/sorters.js';
 import isEnumerable from './isEnumerable.js';
 
 const addEnumerable = (
@@ -23,9 +24,9 @@ const addEnumerable = (
 		const max = getMaxScore(analysisResult.enums, (item) => {
 			if (item.type.type === value.type) {
 				let score = item.path[item.path.length - 1] === name ? 0.3 : 0;
-				const overlap = item.type.values
+				const overlap = (item.type as IStringType).values
 					.filter((subValue: string) => {
-						return value.values.includes(subValue);
+						return (value as IStringType).values.includes(subValue);
 					}).length;
 
 				score += (overlap / item.type.values.length) * 0.35;
@@ -44,6 +45,9 @@ const addEnumerable = (
 			analysisResult.enums[max.index].isInArray ||= isInArray;
 		}
 		else {
+			// @ts-expect-error type
+			value.values.sort(value.type === 'string' ? sortStrings : sortNumbers);
+
 			analysisResult.enums.push({
 				path,
 				type: value,
